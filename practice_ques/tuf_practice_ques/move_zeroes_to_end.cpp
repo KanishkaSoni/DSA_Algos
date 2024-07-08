@@ -9,7 +9,7 @@ void moveZeroes(vector<int> &a) {
             s++;
         }
         if(s<n){
-            swap(a[s], a[f]);
+            swap(a[s], a[f]);//this swap will be redundant, if s and f are equal
             f++;
             s++;
         }
@@ -20,7 +20,7 @@ void moveZeroes(vector<int> &a) {
 
 int main(){
 
-    vector<int> a = {0,1,0,3,12};
+    vector<int> a = {1,2,0,3};
 
     moveZeroes(a);
 
