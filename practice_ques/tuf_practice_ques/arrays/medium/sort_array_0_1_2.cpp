@@ -1,31 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
 void sortColors(vector<int> &a) {
-    int i=0;
-        int j=0;
-        int n=a.size();
-        while(i<n){
-            while(i<n && a[i]!=0){
-                i++;
-            }
-            if(i<n){
-                swap(a[i], a[j]);
-                i++;
-                j++;
-            }
-        }
 
-        i=j;
-        while(i<n){
-            while(i<n && a[i]!=1){
-                i++;
-            }
-            if(i<n){
-                swap(a[i], a[j]);
-                i++;
-                j++;
-            }
+    //DNF Algorithm
+    int n = a.size();
+    int l=0;
+    int m=0;
+    int h=n-1;
+
+    while(m<=h){
+        if(a[m] == 0){
+            swap(a[m], a[l]);
+            m++;
+            l++;
         }
+        else if(a[m]==1){
+            m++;
+        }else{
+            swap(a[m], a[h]);
+            h--;
+        }
+    }
 }
 
 
